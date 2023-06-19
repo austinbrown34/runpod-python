@@ -3,7 +3,8 @@ RunPod | API Wrapper | CTL Commands
 """
 # pylint: disable=too-many-arguments
 
-from .queries import gpus, pods
+from .queries import gpus
+from .queries import pods as pods_query
 from .graphql import run_graphql_query
 from .mutations import pods
 
@@ -30,7 +31,7 @@ def get_pod(pod_id):
     '''
     Get a specific pod
     '''
-    raw_return = run_graphql_query(pods.generate_pod_query(pod_id))
+    raw_return = run_graphql_query(pods_query.generate_pod_query(pod_id))
     cleaned_return = raw_return["data"]["pod"]
     return cleaned_return
 
