@@ -5,7 +5,7 @@ def generate_pod_query(pod_id):
 
     return f"""
     query Pod {{
-        pod(input: {{id: "{pod_id}"}}) {{
+        pod(input: {{podId: "{pod_id}"}}) {{
             id
             name
             runtime {{
