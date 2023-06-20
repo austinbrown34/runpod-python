@@ -3,10 +3,19 @@ RunPod | API Wrapper | CTL Commands
 """
 # pylint: disable=too-many-arguments
 
-from .queries import gpus
+from .queries import gpus, accounts
 from .queries import pods as pods_query
 from .graphql import run_graphql_query
 from .mutations import pods
+
+
+def get_myself():
+    '''
+    Get the current user
+    '''
+    raw_return = run_graphql_query(accounts.QUERY_MYSELF)
+    cleaned_return = raw_return["data"]["myself"]
+    return cleaned_return
 
 
 def get_gpus():

@@ -5,9 +5,10 @@ from .endpoint import Endpoint
 from .endpoint import AsyncioEndpoint, AsyncioJob
 from .api_wrapper.ctl_commands import(
     get_gpus, get_gpu,
-    create_pod, stop_pod, resume_pod, terminate_pod, get_pod,
+    create_pod, stop_pod,
+    resume_pod, terminate_pod, get_pod,
+    get_myself,
 )
-from .api_wrapper.graphql import run_graphql_query
 
 api_key = None  # pylint: disable=invalid-name
 
